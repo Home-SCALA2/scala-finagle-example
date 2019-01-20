@@ -1,7 +1,5 @@
 name := "finagle-example"
-
-version := "0.1"
-
+version := "0.0.1-SNAPSHOT"
 scalaVersion := "2.11.6"
 
 libraryDependencies ++= Seq(
