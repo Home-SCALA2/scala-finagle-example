@@ -1,10 +1,7 @@
-target/
-project/target/
-*.swp
+project
+target
+logs
 *.log
 .idea
+*.iml
 .classpath
-.project
-.cache-main
-.cache-tests
-/bin/

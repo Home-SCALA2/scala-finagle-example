@@ -8,7 +8,7 @@
 ```scala
 class FinagleExampleDaoImpl extends FinagleExampleDao {
   private val finagleExampleDao = TrieMap.empty[String, String]
-//  finagleExampleDao.put("/some-key", "Hello some-key!")
+//  finagleExampleDao.put("/some-key", "Hello some-key!") //TODO: fix test...
 ```
 
 * `GET` http://localhost:8090/some-key
