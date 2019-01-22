@@ -5,7 +5,7 @@ import com.twitter.finagle.Service
 import com.twitter.finagle.http.Response
 import com.twitter.util.{Future => TwitterFuture}
 import com.typesafe.scalalogging._
-import me.eax.finagle_example.dao.FinagleExampleDao
+import me.eax.finagle_example.dao.FinagleExampleStorage
 import me.eax.finagle_example.utils._
 import org.jboss.netty.handler.codec.http._
 import org.jboss.netty.util.CharsetUtil
@@ -18,7 +18,7 @@ class FinagleExampleService(implicit val bindingModule: BindingModule) extends S
 
   private val logger = Logger(LoggerFactory.getLogger(this.getClass))
 
-  private val dao = inject[FinagleExampleDao]
+  private val dao = inject[FinagleExampleStorage]
 
   logger.info(s"service started")
 

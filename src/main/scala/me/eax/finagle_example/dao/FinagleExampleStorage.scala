@@ -3,13 +3,13 @@ package me.eax.finagle_example.dao
 import scala.collection.concurrent.TrieMap
 import scala.concurrent._
 
-trait FinagleExampleDao {
+trait FinagleExampleStorage {
   def get(key: String): Future[Option[String]]
   def update(key: String, value: String): Future[Unit]
   def remove(key: String): Future[Unit]
 }
 
-class FinagleExampleDaoImpl extends FinagleExampleDao {
+class FinagleExampleStorageImpl extends FinagleExampleStorage {
   private val finagleExampleDao = TrieMap.empty[String, String]
   finagleExampleDao.put("/some-key", "Hello some-key!") //TODO: fix test...
 

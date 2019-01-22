@@ -3,7 +3,7 @@ package me.eax.finagle_example.tests
 import com.escalatesoft.subcut.inject.NewBindingModule._
 import com.twitter.finagle.{Http, Service}
 import com.twitter.util.Await
-import me.eax.finagle_example.dao.{FinagleExampleDao, FinagleExampleDaoImpl}
+import me.eax.finagle_example.dao.{FinagleExampleStorage, FinagleExampleStorageImpl}
 import me.eax.finagle_example.services.FinagleExampleService
 import org.jboss.netty.buffer.ChannelBuffers
 import org.jboss.netty.handler.codec.http._
@@ -14,7 +14,7 @@ class RestSpec extends FunSpec with Matchers {
   implicit val bindings = newBindingModule { module =>
     import module._
 
-    bind[FinagleExampleDao] toSingle new FinagleExampleDaoImpl
+    bind[FinagleExampleStorage] toSingle new FinagleExampleStorageImpl
   }
 
   val server = Http.serve(":8090", new FinagleExampleService)
